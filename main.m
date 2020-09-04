@@ -10,7 +10,7 @@ downloads_folder = ['C:\Users\', getenv('username'), '\Desktop'];
 startDate = '01-Sep-2000';
 endDate = now;
 % BVSP (Brazil's stock exchange) tickers must be in the format 'ABCD1.SA'
-ticker = {'AAPL','AMZN'};
+ticker = {'AAPL','AMZN','FB','GOOGL','MSFT'};
 % Sampling frequency: 'd' for dayly, 'w' for weekly, 'm' for monthly
 f = 'm'; 
 
