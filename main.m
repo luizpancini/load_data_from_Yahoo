@@ -7,15 +7,30 @@ close all
 % automatic download folder)
 downloads_folder = ['C:\Users\', getenv('username'), '\Desktop'];
 % Start and end dates
-startDate = '01-Sep-2000';
+startDate = '01-Jan-2000';
 endDate = now;
-% BVSP (Brazil's stock exchange) tickers must be in the format 'ABCD1.SA'
-ticker = {'AAPL','AMZN','FB','GOOGL','MSFT'};
+% Tickers list
+ticker = {'AAPL','AMZN','MSFT','GOOGL','FB'};
+ticker = unique(ticker); % Takes out repeated tickers and sets in alphabetical order            
 % Sampling frequency: 'd' for dayly, 'w' for weekly, 'm' for monthly
-f = 'm'; 
+f = 'w'; 
 
 %% Get the data
 stock = load_data_from_Yahoo(ticker,startDate,endDate,f,downloads_folder);
 
 %% Plot adjusted price ratio
 plot_AdjPriceRatio_from_Yahoo(ticker,startDate,endDate,f,stock)
+
+%% Save the data
+if ~ischar(startDate)
+    startDateStr = datestr(floor(startDate));
+else
+    startDateStr = startDate;
+end
+if ~ischar(endDate)
+    endDateStr = datestr(floor(endDate));
+else
+    endDateStr = endDate;
+end
+filename = ['stock_data_' startDateStr '_' endDateStr '_' f '.mat'];
+save(filename,'stock','startDate','endDate','f');
