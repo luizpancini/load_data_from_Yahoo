@@ -29,9 +29,10 @@ figure1 = figure('InvertHardcopy','off','Color',[1 1 1],'Units','normalized','Po
 axes1 = axes('Parent',figure1,'FontSize',axes_size,'FontName','times new roman','YScale','log');
 for i=1:N
     hold(axes1,'on');
-    val_ind = find(~isnan(stock(i).AdjClose),1,'first');
-    if ~isempty(stock(i).AdjClose) 
-        price0 = stock(i).AdjClose(val_ind); 
+    if ~isempty(stock(i).AdjClose) && ~isnan(stock(i).AdjClose(1))
+        price0 = stock(i).AdjClose(1); 
+    else 
+        price0 = 1; 
     end
     if ~isempty(stock(i).AdjClose) % Discard null data
         j = j+1;
