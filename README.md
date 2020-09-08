@@ -3,6 +3,7 @@ Contains Matlab function to gather stock's data from Yahoo Finance (load_data_fr
 
 These files were created heavily based on the works of Josiah Renfree's hist_stock_data, and Captain Awesome's get_yahoo_stockdata6 functions.
 The goal is to cover some failures of both of these, which may happen depending on the stock chosen. It downloads the data into a .csv file and reads it.
+You can also get it from https://www.mathworks.com/matlabcentral/fileexchange/79888-load_data_from_yahoo
 
 Josiah Renfree's hist_stock_data function is available at https://www.mathworks.com/matlabcentral/fileexchange/18458-hist_stock_data-start_date-end_date-varargin
 and Captain Awesome's get_yahoo_stockdata6 function is available at https://www.mathworks.com/matlabcentral/fileexchange/37502-historical-stock-data-download-alternate-method
