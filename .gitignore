@@ -5,5 +5,5 @@ test.m
 test2.m
 tickerFinder.m
 monkeys_vs_index.m
-sample.jpg
-stock_data_01-Jan-2000_05-Sep-2020_m.mat
+*.jpg
+*.mat
